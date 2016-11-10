@@ -15,25 +15,28 @@ To build and start using these projects, you'll need to clone and build the proj
 Clone this repo by executing the following command in your console:
 
 ```
-git clone https://github.com/SharePoint/sp-dev-samples.git
-```
-
-Navigate to the cloned repo folder which should be the same as the repo name:
-
-```
-cd sp-dev-samples
+git clone https://github.com/Maher256/SPSaturdayWebhooksDemo.git
 ```
 
 Update the config.js file with your Tenant name and U/P
 
-run npm install
+Install the supporting Packages from NPM
 
+```
+run npm install
+```
+
+Start the Node server
+
+```
 run nodemon index.js
+```
 
 Do a HTTP post to the server http://localhost/Webhook?validationtoken=IUGHUYTFTYWD from Postmon to test the subscription.
 
 Do a HTTP post to the server http://localhost/Webhook and send it the following mock data to test a notification:
 
+```
 {
    "value":[
       {
@@ -47,6 +50,7 @@ Do a HTTP post to the server http://localhost/Webhook and send it the following 
       }
    ]
 }
+```
 
 If both tests pass go ahead and subscribe to SharePoint's webhooks at /_api/web/Lists/getbytitle('Documents')/subscription
 
